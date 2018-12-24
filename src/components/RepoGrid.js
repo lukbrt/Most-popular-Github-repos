@@ -1,12 +1,21 @@
 import React, { Component } from 'react';
 import '../App.css';
+import RepoBox from './RepoBox';
+import styled from 'styled-components';
 
 const clientId = '898f9e9639fc081d5302',
     clientSecret = 'ff68f3cbf56aff311fd6e9615a15f9dad76938bb',
-    language = 'all';
+    language = 'javascript';
 const encodedURI = window.encodeURI(`https://api.github.com/search/repositories?q=stars:>1+
         language:${language}&sort=stars&order=desc&type=Repositories&client_id=${clientId}
         &client_secret=${clientSecret}&`);
+
+const StyledGrid = styled.div`
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 50px;
+    padding: 100px 0;
+`;
 
 class RepoGrid extends Component {
 
@@ -22,10 +31,18 @@ class RepoGrid extends Component {
     }
 
     render() {
+        let number = 1;
+
         return (
-            <div>
-                test
-            </div>
+            <StyledGrid>
+                {this.state.items.map(currentItem => 
+                    <RepoBox 
+                        item={currentItem} 
+                        key={number}
+                        nr={number++}
+                    />
+                )}
+            </StyledGrid>
         );
     }
 }
