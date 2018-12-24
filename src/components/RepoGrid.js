@@ -31,7 +31,7 @@ class RepoGrid extends Component {
 
     componentDidMount() {
         const newLang = this.props.location.pathname.substring(1);
-        language = newLang != "" ? newLang : 'all';
+        language = newLang !== "" ? newLang : 'all';
         // console.log(getEncodedURI(language));
         fetch(getEncodedURI())
             .then(response => response.json())
