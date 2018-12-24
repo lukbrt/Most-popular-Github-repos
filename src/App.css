@@ -29,8 +29,8 @@
   width: 150px;
 }
 
-.box {
-}
+/* .box {
+} */
 
 .box > p {
   margin-bottom: .5rem;
@@ -38,6 +38,14 @@
 
 .crimson-colored {
   color: crimson;
+}
+
+.rotate-hover {
+  transition: transform ease-in 1s;
+}
+
+.rotate-hover:hover {
+  transform: rotateX(180deg) rotateY(180deg);
 }
 
 @keyframes App-logo-spin {

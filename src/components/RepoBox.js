@@ -25,7 +25,7 @@ class RepoBox extends Component {
                     <img 
                     src={item.owner.avatar_url} 
                     alt={'item nr' + nr}
-                    className='round-img'
+                    className='round-img rotate-hover'
                     style={{ paddingBottom: "10px" }}
                 />
                 </a>
