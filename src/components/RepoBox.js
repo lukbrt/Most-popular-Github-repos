@@ -19,15 +19,24 @@ class RepoBox extends Component {
 
         console.log(item);
         return (
-            <div>
+            <div className="box">
                 <p style={{ fontWeight: 'bolder' }}>#{nr}</p>
                 <a href={item.owner.html_url}>
                     <img 
                     src={item.owner.avatar_url} 
                     alt={'item nr' + nr}
                     className='round-img'
+                    style={{ paddingBottom: "10px" }}
                 />
                 </a>
+                <p 
+                    className="crimson-colored" 
+                    style={{ fontWeight: 'bolder' }}
+                >
+                    {item.name}
+                </p>
+                <p>@{item.owner.login}</p>
+                <p>{item.stargazers_count} stars</p>
             </div>
         );
     }

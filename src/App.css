@@ -29,6 +29,17 @@
   width: 150px;
 }
 
+.box {
+}
+
+.box > p {
+  margin-bottom: .5rem;
+}
+
+.crimson-colored {
+  color: crimson;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
