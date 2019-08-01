@@ -12,17 +12,6 @@ class App extends Component {
 		return (
 			<div className="App">
 				<Navigation languages={langs} />
-
-				{/* <header>
-					{langs.map(lang => 
-						<button 
-							className="btn"
-							key={lang}
-						>
-							{lang}
-						</button>
-					)}
-				</header> */}
 			</div>
 		);
 	}

@@ -6,9 +6,6 @@ import styled from 'styled-components';
 const clientId = '898f9e9639fc081d5302',
     clientSecret = 'ff68f3cbf56aff311fd6e9615a15f9dad76938bb';
 let language = 'all';
-// const encodedURI = window.encodeURI(`https://api.github.com/search/repositories?q=stars:>1+
-//         language:${language}&sort=stars&order=desc&type=Repositories&client_id=${clientId}
-//         &client_secret=${clientSecret}&`);
 
 const getEncodedURI = (lang) => (
         window.encodeURI(`https://api.github.com/search/repositories?q=stars:>1+
@@ -32,7 +29,7 @@ class RepoGrid extends Component {
     componentDidMount() {
         const newLang = this.props.location.pathname.substring(1);
         language = newLang !== "" ? newLang : 'all';
-        // console.log(getEncodedURI(language));
+
         fetch(getEncodedURI())
             .then(response => response.json())
             .then(json => this.setState({ items: json.items }))
